@@ -269,13 +269,13 @@ class ROno_py():
 
         # Plot final
         ax.scatter(*self.r.T, marker='x', facecolor='RoyalBlue',
-                   color='none',
+                   color=(0, 0, 0, 0),
                    s=35, linewidths=1.5, label='r estimated')
 
         # Plot initial guess
         if show_init:
             ax.scatter(*self.r_iters[0, :, :].T, marker='s', color='RoyalBlue',
-                       facecolor='none',
+                       facecolor=(0, 0, 0, 0),
                        s=35, linewidths=1.5, label='r inital')
 
         # Plot microphone paths across iterations
@@ -285,7 +285,8 @@ class ROno_py():
 
         # Plot ground truth if given
         if r_gt is not None:
-            ax.scatter(*r_gt.T, marker='o', color='red', facecolor='none',
+            ax.scatter(*r_gt.T, marker='o', color='red',
+                       facecolor=(0, 0, 0, 0),
                        s=35, linewidths=1.5, label='r ground truth')
 
             for l in range(self.L):

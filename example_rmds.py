@@ -64,18 +64,18 @@ ax_ls = fig.add_subplot(121, projection='3d')
 ax_ls.set_title("least-square (smacof)")
 
 ax_ls.scatter(*solver_ls.x_aligned.T, marker='x', facecolor='RoyalBlue',
-              color='none', s=35, linewidths=1.5, label='r estimated')
+              color=(0, 0, 0, 0), s=35, linewidths=1.5, label='r estimated')
 
-ax_ls.scatter(*solver_ls.x_ref_centered.T, marker='o', facecolor='none',
+ax_ls.scatter(*solver_ls.x_ref_centered.T, marker='o', facecolor=(0, 0, 0, 0),
               color='RoyalBlue', s=35, linewidths=1.5, label='r source')
 
 ax_oa = fig.add_subplot(122, projection='3d')
 ax_oa.set_title("outlier-aware")
 
 ax_oa.scatter(*solver_oa.x_aligned.T, marker='x', facecolor='RoyalBlue',
-              color='none', s=35, linewidths=1.5, label='r estimated')
+              color=(0, 0, 0, 0), s=35, linewidths=1.5, label='r estimated')
 
-ax_oa.scatter(*solver_oa.x_ref_centered.T, marker='o', facecolor='none',
+ax_oa.scatter(*solver_oa.x_ref_centered.T, marker='o', facecolor=(0, 0, 0, 0),
               color='RoyalBlue', s=35, linewidths=1.5, label='r source')
 
 plt.savefig("example_rmds_geometries.pdf")

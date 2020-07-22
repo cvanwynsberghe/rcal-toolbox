@@ -11,7 +11,6 @@ from __future__ import division
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from mpl_toolkits.mplot3d.art3d import juggle_axes
 
 from rcbox.rmds import RMDU
 from rcbox.utils import make_TOA
@@ -68,35 +67,35 @@ fig.suptitle("MDU example")
 ax_ls = fig.add_subplot(121, projection='3d')
 ax_ls.scatter(*toa_solver.x_aligned[0:toa_solver.Nr, :].T,
               marker='x', facecolor='RoyalBlue',
-              color='none', s=35, linewidths=1.5, label='r estimated')
+              color=(0, 0, 0, 0), s=35, linewidths=1.5, label='r estimated')
 
 ax_ls.scatter(*toa_solver.x_aligned[toa_solver.Nr::, :].T,
               marker='x', facecolor='red',
-              color='none', s=35, linewidths=1.5, label='r estimated')
+              color=(0, 0, 0, 0), s=35, linewidths=1.5, label='r estimated')
 
 ax_ls.scatter(*toa_solver.x_ref_centered[0:toa_solver.Nr, :].T, marker='o',
-              facecolor='none',
+              facecolor=(0, 0, 0, 0),
               color='RoyalBlue', s=35, linewidths=1.5, label='r source')
 
 ax_ls.scatter(*toa_solver.x_ref_centered[toa_solver.Nr::, :].T, marker='o',
-              facecolor='none',
+              facecolor=(0, 0, 0, 0),
               color='red', s=35, linewidths=1.5, label='r source')
 
 ax_oa = fig.add_subplot(122, projection='3d')
 ax_oa.scatter(*rtoa_solver.x_aligned[0:rtoa_solver.Nr, :].T,
               marker='x', facecolor='RoyalBlue',
-              color='none', s=35, linewidths=1.5, label='r estimated')
+              color=(0, 0, 0, 0), s=35, linewidths=1.5, label='r estimated')
 
 ax_oa.scatter(*rtoa_solver.x_aligned[rtoa_solver.Nr::, :].T,
               marker='x', facecolor='red',
-              color='none', s=35, linewidths=1.5, label='r estimated')
+              color=(0, 0, 0, 0), s=35, linewidths=1.5, label='r estimated')
 
 ax_oa.scatter(*rtoa_solver.x_ref_centered[0:rtoa_solver.Nr, :].T, marker='o',
-              facecolor='none',
+              facecolor=(0, 0, 0, 0),
               color='RoyalBlue', s=35, linewidths=1.5, label='r source')
 
 ax_oa.scatter(*rtoa_solver.x_ref_centered[rtoa_solver.Nr::, :].T, marker='o',
-              facecolor='none',
+              facecolor=(0, 0, 0, 0),
               color='red', s=35, linewidths=1.5, label='r source')
 
 plt.savefig("example_toa_geometries.pdf")
