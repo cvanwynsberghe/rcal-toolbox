@@ -1,3 +1,0 @@
-rcbox
-rmds_cythoned
-rtdoa_cythoned

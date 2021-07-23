@@ -20,7 +20,8 @@ setup(
     cmdclass = {'build_ext':build_ext},
     ext_modules = cythonize(extensions),
     ext_package='rcbox',
-    include_dirs = [numpy.get_include()] #Include directory not hard-wired
+    include_dirs = [numpy.get_include()],
+    test_suite = 'unit_tests',
 )
 
 # Run this line for compilation:
