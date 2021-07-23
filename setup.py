@@ -21,7 +21,7 @@ setup(
     ext_modules = cythonize(extensions),
     ext_package='rcbox',
     include_dirs = [numpy.get_include()],
-    test_suite = 'unit_tests',
+    test_suite = 'tests',
 )
 
 # Run this line for compilation:

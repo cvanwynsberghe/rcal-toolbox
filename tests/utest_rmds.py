@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+
 """
 Created on Feb 23 2016
 
@@ -7,12 +10,14 @@ Created on Feb 23 2016
 Unit Tests for rmds functions implemented in cython
 Use: py.test test_filename.py
 """
+
+
 import numpy as np
 from numpy.testing import assert_allclose
 
-from ..utils import get_D, make_TOA
-from ..rmds import rmdsw, RMDS, RMDU
-from .. import rmds_cythoned
+from rcbox.utils import get_D, make_TOA
+from rcbox.rmds import rmdsw, RMDS, RMDU
+from rcbox import rmds_cythoned
 
 np.random.seed(1)
 
