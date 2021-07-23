@@ -98,10 +98,14 @@ def rmdsw(D, lbda=0.5, Ndim=3, W=None, Xinit=None,
                     A11[nm] = 0.0
 
         A1 = squareform(A11)
-        L1 = sp.diag(A1.sum(1)) - A1
+        # DeprecationWarning: scipy.diag is deprecated and will be removed in SciPy 2.0.0, use numpy.diag instead
+        # L1 = sp.diag(A1.sum(1)) - A1
+        L1 = np.diag(A1.sum(1)) - A1
 
         # Update X
-        X[t+1, :, :] = sp.dot(X[t, :, :], sp.dot(L1, Lpinv))
+        # DeprecationWarning: scipy.dot is deprecated and will be removed in SciPy 2.0.0, use numpy.dot instead
+        # X[t+1, :, :] = sp.dot(X[t, :, :], sp.dot(L1, Lpinv))
+        X[t+1, :, :] = np.dot(X[t, :, :], np.dot(L1, Lpinv))
         if EpsType == "Forero2012":
             Eps[t] = linalg.norm(X[t+1, :, :]-X[t, :, :]) / linalg.norm(X[t+1, :, :])
         elif EpsType == "meters":

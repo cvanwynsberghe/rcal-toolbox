@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+
 """
 Created on Sep 21 2015
 
@@ -7,11 +10,13 @@ Created on Sep 21 2015
 Unit Tests for tdoa functions implemented in C
 Use: py.test test_filename.py
 """
+
+
 import numpy as np
 from numpy.testing import assert_allclose
 
-from ..rtdoa import ROno
-from ..utils import make_TDOA
+from rcbox.rtdoa import ROno
+from rcbox.utils import make_TDOA
 
 np.random.seed(1)
 
